@@ -4,7 +4,7 @@ A simple script to play around with QR code encoding in Python using the `qrcode
 # Depends
 
     $ sudo apt-get install python3-pip libopenjp2-7 libtiff5
-    $ pip3 install -U qrcode
+    $ pip3 install -U pillow qrcode
 
 # Usage
 

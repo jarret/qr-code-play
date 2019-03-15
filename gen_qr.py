@@ -8,7 +8,7 @@ import qrcode
 # depends on:
 #
 # $ sudo apt-get install python3-pip libopenjp2-7 libtiff5
-# $ pip3 install -U qrcode
+# $ pip3 install -U pillow qrcode
 
 PNG_BOX_SIZE = 10
 QR_BORDER = 2
@@ -19,6 +19,7 @@ ERROR_CORRECTION = qrcode.constants.ERROR_CORRECT_L # 7% ECC
 
 def make_qr_png(content, filename):
     # using uppercase in bech32-style strings allows for efficient
+    # alphanumeric-mode encoding
     content = content.upper() if content.isalnum() else content
     qr = qrcode.QRCode(error_correction=ERROR_CORRECTION,
                        box_size=PNG_BOX_SIZE, border=QR_BORDER)
